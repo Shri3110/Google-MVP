@@ -1,0 +1,92 @@
+{
+  "passport": {
+    "clarification": [
+      {
+        "type": "Context",
+        "prompt": "What kind of passport photo are you looking for?",
+        "options": [
+          "Passport booklet",
+          "Portrait photo",
+          "Honda Passport vehicle"
+        ]
+      }
+    ],
+    "synthesis": {
+      "Passport booklet": "Photos of a passport booklet",
+      "Portrait photo": "Portrait style photos for passport",
+      "Honda Passport vehicle": "Photos of a Honda Passport vehicle"
+    }
+  },
+  "cricket": {
+    "clarification": [
+      {
+        "type": "Subject",
+        "prompt": "Are you looking for the sport or the insect?",
+        "options": [
+          "Cricket the sport",
+          "Cricket the insect",
+          "Cricket bat or kit"
+        ]
+      }
+    ],
+    "synthesis": {
+      "Cricket the sport": "Photos of people playing cricket the sport",
+      "Cricket the insect": "Photos of cricket insects",
+      "Cricket bat or kit": "Photos of cricket bats and kits"
+    }
+  },
+  "whiteboard": {
+    "clarification": [
+      {
+        "type": "Context",
+        "prompt": "Are you looking for a blank whiteboard or one with writing on it?",
+        "options": [
+          "Blank whiteboard",
+          "Whiteboard notes",
+          "Meeting diagrams"
+        ]
+      }
+    ],
+    "synthesis": {
+      "Blank whiteboard": "Photos of blank whiteboards",
+      "Whiteboard notes": "Photos of notes written on a whiteboard",
+      "Meeting diagrams": "Photos of diagrams on a whiteboard from a meeting"
+    }
+  },
+  "school": {
+    "clarification": [
+      {
+        "type": "Context",
+        "prompt": "Are you looking for a specific school event or just general photos of the school?",
+        "options": [
+          "School event",
+          "School building",
+          "Classroom"
+        ]
+      }
+    ],
+    "synthesis": {
+      "School event": "Photos of a school event",
+      "School building": "Photos of a school building exterior",
+      "Classroom": "Photos inside a school classroom"
+    }
+  },
+  "annual day": {
+    "clarification": [
+      {
+        "type": "Context",
+        "prompt": "Are you looking for photos of the performance or behind-the-scenes?",
+        "options": [
+          "Performance on stage",
+          "Getting ready",
+          "Group photo"
+        ]
+      }
+    ],
+    "synthesis": {
+      "Performance on stage": "Photos of the performance on stage at annual day",
+      "Getting ready": "Behind the scenes photos getting ready for annual day",
+      "Group photo": "Group photos from annual day"
+    }
+  }
+}

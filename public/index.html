@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Photos</title>
+    <link rel="stylesheet" href="style.css?v=6">
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<body>
+    <div class="app-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <svg class="gb_uc" viewBox="0 0 40 40" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="#FABB05" d="M19.9,0C19.9,0,19.8,0,19.9,0c-5.5,0-10,4.5-10,10c0,5.5,4.5,10,10,10c0,0,0.1,0,0.1,0v0c0,0,0,0,0,0V0z"></path>
+                    <path fill="#EA4335" d="M0,19.9C0,19.9,0,19.8,0,19.9c0-5.5,4.5-10,10-10c5.5,0,10,4.5,10,10c0,0,0,0.1,0,0.1h0c0,0,0,0,0,0H0z"></path>
+                    <path fill="#4285F4" d="M20.1,40c0,0,0.1,0,0.1,0c5.5,0,10-4.5,10-10c0-5.5-4.5-10-10-10c0,0-0.1,0-0.1,0v0c0,0,0,0,0,0V40z"></path>
+                    <path fill="#34A853" d="M40,20.1c0,0,0,0.1,0,0.1c0,5.5-4.5,10-10,10c-5.5,0-10-4.5-10-10c0,0,0-0.1,0-0.1h0c0,0,0,0,0,0H40z"></path>
+                </svg>
+                <span class="logo-text"><span class="google-text">Google</span> Photos</span>
+            </div>
+            
+            <nav class="side-menu">
+                <a href="#" class="menu-item active">
+                    <span class="material-symbols-outlined">photo_library</span> Photos
+                </a>
+                <a href="#" class="menu-item">
+                    <span class="material-symbols-outlined">notifications</span> Updates
+                </a>
+                
+                <div class="menu-divider">Collections</div>
+                
+                <a href="#" class="menu-item"><span class="material-symbols-outlined">photo_album</span> Albums</a>
+                <a href="#" class="menu-item"><span class="material-symbols-outlined">description</span> Documents</a>
+                <a href="#" class="menu-item"><span class="material-symbols-outlined">screenshot</span> Screenshots and recordings</a>
+                <a href="#" class="menu-item"><span class="material-symbols-outlined">star</span> Favourites</a>
+                <a href="#" class="menu-item"><span class="material-symbols-outlined">pets</span> People and pets</a>
+                <a href="#" class="menu-item"><span class="material-symbols-outlined">location_on</span> Places</a>
+                <a href="#" class="menu-item"><span class="material-symbols-outlined">play_circle</span> Videos</a>
+                <a href="#" class="menu-item"><span class="material-symbols-outlined">schedule</span> Recently added</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <div class="main-wrapper">
+            <header class="app-header">
+                <div class="search-container">
+                    <button class="search-icon" id="searchBtn">
+                        <span class="material-symbols-outlined">search</span>
+                    </button>
+                    <input type="text" id="searchInput" placeholder="Search your photos">
+                </div>
+                <div class="header-right">
+                    <span class="material-symbols-outlined header-icon">add</span>
+                    <span class="material-symbols-outlined header-icon">help</span>
+                    <span class="material-symbols-outlined header-icon">settings</span>
+                    <span class="material-symbols-outlined header-icon">apps</span>
+                    <div class="avatar">
+                        <span class="material-symbols-outlined">person</span>
+                    </div>
+                </div>
+            </header>
+
+            <main class="app-main">
+                
+                <!-- Refined Results Header -->
+                <div id="refinedHeader" class="refined-header hidden">
+                    <h2 id="resultCountText">12 photos found</h2>
+                    <div class="refinement-pill" id="refinementPill">Refined using: cricket · my team</div>
+                </div>
+
+                <!-- Ask Photos Back Card -->
+                <div id="askPhotosCard" class="ask-photos-card hidden">
+                    <div id="cardContent">
+                        <p id="cardContext" class="card-context"></p>
+                        <p id="cardQuestion" class="card-question"></p>
+                        <div id="cardChips" class="card-chips">
+                            <!-- choice chips dynamically inserted here -->
+                        </div>
+                    </div>
+                    
+                    <div id="cardLoading" class="card-loading hidden">
+                        <p id="cardConfirmation" class="card-confirmation"></p>
+                        <p class="card-searching-text">Searching with both clues...</p>
+                    </div>
+                    
+                    <div id="cardFailed" class="card-failed hidden">
+                        <p class="card-question">I still can't narrow this down confidently.</p>
+                        <p class="card-context">Try adding a person, place, event, or approximate date to your search.</p>
+                    </div>
+                </div>
+
+                <!-- Skeletons -->
+                <div id="skeletonGrid" class="photo-grid hidden" style="margin-top: 24px;">
+                    <div class="skeleton-card"></div>
+                    <div class="skeleton-card"></div>
+                    <div class="skeleton-card"></div>
+                    <div class="skeleton-card"></div>
+                </div>
+
+                <!-- Grid Area -->
+                <section id="galleryDate" class="grid-section hidden">
+                    <!-- Fake memory chips for realism like the screenshot -->
+                    <div class="memories-row" id="memoriesRow">
+                        <div class="memory-card" style="background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=500&q=80') center/cover;">
+                            <span>Golden hour</span>
+                        </div>
+                        <div class="memory-card" style="background: url('https://images.unsplash.com/photo-1511629091441-ee46146481b6?w=500&q=80') center/cover;">
+                            <span>Recent Highlights</span>
+                        </div>
+                        <div class="memory-card" style="background: url('https://images.unsplash.com/photo-1495954484750-af469f2f9be5?w=500&q=80') center/cover;">
+                            <span>1 year ago today</span>
+                        </div>
+                    </div>
+
+                    <h2 class="month-title">June</h2>
+                    <div class="date-subtitle">Tue 9 Jun &nbsp;&nbsp; Chennai, Tamil Nadu</div>
+                    <div id="photoGrid" class="photo-grid">
+                        <!-- Photos will be dynamically inserted here -->
+                    </div>
+                </section>
+
+                <div class="empty-state" id="emptyState">
+                    Search for something to see your photos.
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="app.js?v=14"></script>
+</body>
+</html>

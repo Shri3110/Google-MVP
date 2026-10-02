@@ -1,0 +1,20 @@
+# Context: Ask Photos Back MVP
+
+## Background
+Google Photos users often remember a photo through only a few partial clues — a person, place, event, object, word, or approximate time — but those clues may not be specific enough to retrieve the exact photo.
+
+When a search produces no useful result, or produces too many loosely matching results, Google Photos leaves the user to resolve the ambiguity themselves. They must repeatedly guess new search terms, reconstruct details from other sources, or manually scroll through large result sets.
+
+The core problem is therefore not that users have no memory of the photo. They have incomplete memory, and the current search experience does not help them turn that incomplete memory into a sufficiently precise query.
+
+## Problem Statement
+How might Google Photos help users recover a partially remembered photo when their initial search clue is either too weak to find it or too broad to narrow it down?
+
+Users can remember enough about a photo to search for it, but not enough to find it in one query. Google Photos needs to help them bridge that gap rather than making them do the disambiguation work themselves.
+
+## MVP Focus
+The MVP focuses specifically on two retrieval failure modes:
+1. **Zero / wrong-match results**: the user's initial clue produces no useful photo or results from the wrong context.
+2. **Overloaded results**: the clue produces a large set of plausible results that the user cannot efficiently narrow down.
+
+The MVP addresses these by turning the failed search into a guided clarification, asking for one additional clue that can narrow the search, then combining that clue with the original query.
