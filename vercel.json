@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/api/:path*",
-      "destination": "https://backend-url-placeholder.up.railway.app/api/:path*"
+      "destination": "https://google-mvp-production.up.railway.app/api/:path*"
     }
   ]
 }
